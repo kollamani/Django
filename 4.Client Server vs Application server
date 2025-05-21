@@ -1,4 +1,4 @@
- ###############Client-Server Architecture#############
+###############Client-Server Architecture#############
 Client-Server Architecture is a distributed application model.
 Client-Server Architecture splits tasks between clients and servers.
 Imagine it a conversation: clients ask questions, and servers answer.

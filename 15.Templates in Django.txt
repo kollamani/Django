@@ -1,0 +1,45 @@
+def sample(request):
+return Httpresponce("<h1>Hello Welcome to Python</h1>")
+
+Instead of creating views directly with html Code is difficult so we go for Templates.
+
+Steps to Create Template:
+    --Setup the templates folder
+    --Setup DIRS in settings.py
+    --Create a template
+    --use template in views
+    --execute the project
+
+Creating Templates in Django Projects:
+    --Create a 'templates' directory:
+    --In your main project directory, create a folder named templates. If you are working on a specific app, it's good practice to create a templates directory inside your app directory, and then create another directory with the name of your app inside the templates directory.
+
+Configure template settings:
+    --In your settings.py file, ensure that the TEMPLATES setting is configured correctly. Specifically, check the DIRS option within the TEMPLATES setting to make sure it includes the path to your templates directory.
+Python
+
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [os.path.join(BASE_DIR, 'templates')],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                ],
+            },
+        },
+    ]
+
+Create HTML template files:
+    --Inside the templates directory (or your app's templates directory), create your HTML files (e.g., home.html, about.html). These files will contain the structure and content of your web pages.
+
+Load and render templates in views:
+    --In your Django views, use the render() function to load and render your templates.
+from django.shortcuts import render
+    
+def my_view(request):
+    return render(request, 'my_template.html')
